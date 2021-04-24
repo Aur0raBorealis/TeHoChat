@@ -1,4 +1,4 @@
-<fieldset>
+<fieldset class="center">
     <legend>
         rek
     </legend>
@@ -11,7 +11,7 @@
         <p>
             Käyttäjätunnus
             <br/> 
-            <input type="text" name="givenUsername" placeholder="" maxlength="40" required />
+            <input type="text" name="givenUsername" maxlength="40" required />
         </p>
         <p>
             Salasana

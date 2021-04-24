@@ -20,14 +20,13 @@
 							TeHoChat
 						</a>
 					</h1>
-					<?php
-						require_once("functions/functions.php");
-						include("includes/inavIndex.php");
-					?>
 				</div>
 			</div>
+			<?php
+				include("includes/iheader.php");
+			?>
 		</div>
-		<div id="menu-wrapper">
+			<div id="menu-wrapper">
 				<div id="menu">
 					<ul>
 						<?php
@@ -43,7 +42,6 @@
 								?>
 							</a>
 						</li>
-
 						<li>
 							<a href="userChat.php" accesskey="2" title="">
 								Aloita chat
@@ -61,7 +59,7 @@
 						</li>
 						<li>
 							<a href="logOutUser.php"> 
-                				Kirjaudu ulos        
+								Kirjaudu ulos        
 							</a>
 						</li>
 						<?php
@@ -84,10 +82,10 @@
 						</li>
 						<?php
 							}
-						?>	
+						?>
 					</ul>
 				</div>
-		</div>
+			</div>
 
 		<?php
 			include("includes/ifooter.php")

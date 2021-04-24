@@ -431,7 +431,7 @@ ul.contact li a.icon-rss:before
 
 	#menu-wrapper
 	{
-		background: #3D3D3D;
+		background: #ffffff;
 	}
 
 	#menu
@@ -460,7 +460,7 @@ ul.contact li a.icon-rss:before
 		font-weight: 600;
 		text-transform: uppercase;
 		outline: 0;
-		color: #FFF;
+		color: rgb(0, 0, 0);
 	}
 	
 	#menu li:hover a, #menu li.active a, #menu li.active span

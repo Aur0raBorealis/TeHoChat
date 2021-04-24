@@ -16,9 +16,9 @@
             </p>
             <p>
                 <br/>
-                <input class="btn" type="submit" name="submitUser" value="Submit"/>
+                <input type="submit" name="submitUser" value="Submit"/>
                 <input type="reset"  value="Tyhjennä"/>
-                <input class="btn cencel" onClick="closeForm" type="submit" name="submitBack" value="Peruta"/>
+                <input type="submit" name="submitBack" value="Peruta"/>
             </p>
         </form>
     </fieldset>

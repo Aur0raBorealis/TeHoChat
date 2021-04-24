@@ -15,7 +15,6 @@
             include("includes/iheader.php");
             include("includes/inavLogInUser.php"); 
             include("forms/flogInUser.php"); 
-            include("includes/iheader.php");
         ?>
         <?php
             //Lomakkeen submit painettu?
@@ -53,7 +52,7 @@
         ?>
         <?php
             //***Luovutetaanko ja palataan takaisin pääsivulle alkutilanteeseen
-            //ilma  rekisteröintiä?
+            //ilman rekisteröintiä?
             if(isset($_POST['submitBack'])){
                 session_unset();
                 session_destroy();
