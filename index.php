@@ -53,7 +53,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#" accesskey="5" title="">
+							<a href="asetukset.php" accesskey="5" title="">
 								Asetukset
 							</a>
 						</li>
