@@ -43,7 +43,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="userChat.php" accesskey="2" title="">
+							<a href="chat/userChat.php" accesskey="2" title="">
 								Aloita chat
 							</a>
 						</li>
