@@ -33,7 +33,7 @@
 		<div id="menu">
 			<ul>
 				<li><a href="chat/userChat.php" accesskey="2" title="">Aloita chat</a></li>
-				<li><a href="#" accesskey="3" title="">HRV</a></li>
+				<li><a href="chart.php" accesskey="3" title="">HRV</a></li>
 				<li><a href="asetukset.php" accesskey="5" title="">Asetukset</a></li>
 			</ul>
 		</div>

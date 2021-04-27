@@ -48,7 +48,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#" accesskey="3" title="">
+							<a href="chart.php" accesskey="3" title="">
 								HRV
 							</a>
 						</li>
