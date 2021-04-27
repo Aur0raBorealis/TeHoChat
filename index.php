@@ -38,7 +38,7 @@
 								<?php
 									echo("<p>
 											Käyttäjä: 
-										</p>" .$_SESSION['suserName']);
+										</p>" . $_SESSION['suserName']);
 								?>
 							</a>
 						</li>

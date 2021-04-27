@@ -26,7 +26,7 @@ h1, h2, h3
 	margin: 0;
 	padding: 0;
 	font-weight: 600;
-	color: #000000;
+	color: #FFF;
 }
 
 p, ol, ul
@@ -407,7 +407,7 @@ ul.contact li a.icon-rss:before
 	#logo a
 	{
 		text-decoration: none;
-		color: #FFF;
+		color: #000;
 	}
 	
 	#logo span
@@ -1028,7 +1028,7 @@ bottom: 100px;
     position: fixed;
     float: left;
     text-decoration: underline;
-    text-decoration-color: black;   
+    text-decoration-color: #fff;   
 
 }
 

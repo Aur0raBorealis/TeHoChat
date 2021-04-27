@@ -1,5 +1,4 @@
 <?php 
-session_start();
 include('chatHeader.php');
 ?>
 <title>Keskustelu</title>
@@ -15,8 +14,7 @@ include('chatHeader.php');
 <?php include('container.php');?>
 <div class="container">		
 	<h1>Keskustelu</h1>		
-	<br>		
-	<?php if(isset($_SESSION['userid']) && $_SESSION['userid']) { ?> 	
+	<br>			
 		<div class="chat">	
 			<div id="frame">		
 				<div id="sidepanel">
@@ -40,7 +38,7 @@ include('chatHeader.php');
 							echo '</ul>';
 							echo '</div>';
 							echo '<div id="expanded">';			
-							echo '<a href="logout.php">Logout</a>';
+							echo '<a href="index.php">Logout</a>';
 							echo '</div>';
 					}
 					echo '</div>';
@@ -80,15 +78,15 @@ include('chatHeader.php');
 				<div class="content" id="content"> 
 					<div class="contact-profile" id="userSection">	
 					<?php
-					$userDetails = $chat->getUserDetails($currentSession);
-					foreach ($userDetails as $user) {													
+						$userDetails = $chat->getUserDetails($currentSession);
+						foreach ($userDetails as $user) {													
 							echo '<p>'.$user['username'].'</p>';							
-					}	
+						}	
 					?>						
 					</div>
 					<div class="messages" id="conversation">		
 					<?php
-					echo $chat->getUserChat($_SESSION['userid'], $currentSession);						
+						echo $chat->getUserChat($_SESSION['userid'], $currentSession);						
 					?>
 					</div>
 					<div class="message-input" id="replySection">				
@@ -102,11 +100,6 @@ include('chatHeader.php');
 				</div>
 			</div>
 		</div>
-	<?php } else { ?>
-		<br>
-		<br>
-		<strong><a href="login.php"><h3>Login To Access Chat System</h3></a></strong>		
-	<?php } ?>
 	<br>
 	<br>	
 </div>	
