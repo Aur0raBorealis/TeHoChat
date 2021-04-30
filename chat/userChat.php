@@ -1,5 +1,4 @@
 <?php 
-session_start();
 include('chatHeader.php');
 ?>
 <title>Keskustelu</title>
@@ -23,6 +22,7 @@ include('chatHeader.php');
 					<?php
 					include ('Chat.php');
 					$chat = new Chat();
+					// Tähän username ja userid					
 					$loggedUser = $chat->getUserDetails($_SESSION['userid']);
 					echo '<div class="wrap">';
 					$currentSession = '';

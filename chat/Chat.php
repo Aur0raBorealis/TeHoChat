@@ -37,11 +37,11 @@ class Chat{
 		$numRows = mysqli_num_rows($result);
 		return $numRows;
 	}
-	public function loginUsers($username, $password){
+	public function loginUsers($username){
 		$sqlQuery = "
 			SELECT userid, username 
 			FROM ".$this->chatUsersTable." 
-			WHERE username='".$username."' AND password='".$password."'";		
+			WHERE username='".$username."'";		
         return  $this->getData($sqlQuery);
 	}		
 	public function chatUsers($userid){

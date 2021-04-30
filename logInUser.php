@@ -37,6 +37,7 @@
                         if(password_verify($givenPasswordAdded,$tulosOlio->userPassword)){
                             $_SESSION['sloggedIn']="yes";
                             $_SESSION['suserName']=$_POST['givenUsername'];
+                            
                             header("Location: index.php"); //Palataan pääsivulle kirjautuneena
                         }else{
                             $_SESSION['swarningInput']="Wrong password";
