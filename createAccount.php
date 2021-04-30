@@ -88,7 +88,7 @@
                     try {
                         //***Käyttäjätunnus ei saa olla käytetty aiemmin
                         $sql = "SELECT COUNT(*) FROM TeHoChat_user where userName  =  " . "'".$_POST['givenUsername']."' OR userPhoneNumber =  " . "'".$_POST['givenPhoneNumber']."'"  ;
-
+                        
                         $kysely=$DBH->prepare($sql);
                         $kysely->execute();				
                         $tulos=$kysely->fetch();

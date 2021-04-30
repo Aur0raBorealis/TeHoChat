@@ -25,7 +25,7 @@ if (!empty($_POST['username']) && !empty($_POST['pwd'])) {
 	<h2>Keskustelu</h1>		
 	<div class="row">
 		<div class="col-sm-4">
-			<h4>Chat Login:</h4>		
+			<h4>Chat kirjautuminen:</h4>		
 			<form method="post">
 				<div class="form-group">
 				<?php if ($loginError ) { ?>
@@ -33,20 +33,17 @@ if (!empty($_POST['username']) && !empty($_POST['pwd'])) {
 				<?php } ?>
 				</div>
 				<div class="form-group">
-					<label for="username">User:</label>
+					<label for="username">Käyttäjätunnus:</label>
 					<input type="username" class="form-control" name="username" required>
 				</div>
 				<div class="form-group">
-					<label for="pwd">Password:</label>
+					<label for="pwd">Salasana:</label>
 					<input type="password" class="form-control" name="pwd" required>
 				</div>  
-				<button type="submit" name="login" class="btn btn-info">Login</button>
+				<button type="submit" name="login" class="btn btn-info">Kirjaudu</button>
 			</form>
 			<br>
-			<p><b>User</b> : adam<br><b>Password</b> : 123</p>
-			<p><b>User</b> : rose<br><b>Password</b> : 123</p>
-			<p><b>User</b> : smith<br><b>Password</b>: 123</p>
-			<p><b>User</b> : merry<br><b>Password</b>: 123</p>
+			<p><b>Käyttäjätunnus</b> : oma käyttäjätunnus<br><b>Salasana</b> : 123</p>
 		</div>
 		
 	</div>

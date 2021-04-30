@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include('chatHeader.php');
 ?>
 <title>Keskustelu</title>
@@ -14,7 +15,8 @@ include('chatHeader.php');
 <?php include('container.php');?>
 <div class="container">		
 	<h1>Keskustelu</h1>		
-	<br>			
+	<br>		
+	<?php if(isset($_SESSION['userid']) && $_SESSION['userid']) { ?> 	
 		<div class="chat">	
 			<div id="frame">		
 				<div id="sidepanel">
@@ -38,7 +40,7 @@ include('chatHeader.php');
 							echo '</ul>';
 							echo '</div>';
 							echo '<div id="expanded">';			
-							echo '<a href="index.php">Logout</a>';
+							echo '<a href="logout.php">Logout</a>';
 							echo '</div>';
 					}
 					echo '</div>';
@@ -46,7 +48,7 @@ include('chatHeader.php');
 					</div>
 					<div id="search">
 						<label for=""><i class="fa fa-search" aria-hidden="true"></i></label>
-						<input type="text" placeholder="Search contacts..." />					
+						<input type="text" placeholder="Etsi..." />					
 					</div>
 					<div id="contacts">	
 					<?php
@@ -92,7 +94,7 @@ include('chatHeader.php');
 					<div class="message-input" id="replySection">				
 						<div class="message-input" id="replyContainer">
 							<div class="wrap">
-								<input type="text" class="chatMessage" id="chatMessage<?php echo $currentSession; ?>" placeholder="Write your message..." />
+								<input type="text" class="chatMessage" id="chatMessage<?php echo $currentSession; ?>" placeholder="Kirjoita viestisi..." />
 								<button class="submit chatButton" id="chatButton<?php echo $currentSession; ?>"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>	
 							</div>
 						</div>					
@@ -100,6 +102,11 @@ include('chatHeader.php');
 				</div>
 			</div>
 		</div>
+	<?php } else { ?>
+		<br>
+		<br>
+		<strong><a href="login.php"><h3>Login To Access Chat System</h3></a></strong>		
+	<?php } ?>
 	<br>
 	<br>	
 </div>	
