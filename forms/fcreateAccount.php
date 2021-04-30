@@ -1,12 +1,14 @@
 <fieldset class="center">
     <legend>
-        rek
-    </legend>
+        <h1>
+            Käyttäjätilin luonti
+        </h1>
+        </legend>
     <form method="post">
         <p>
             Puhelinnumero
             <br/> 
-            <input id="phone" type="tel" name="givenPhoneNumber" placeholder="" maxlength="40" required />
+            <input id="phone" type="tel" name="givenPhoneNumber" maxlength="40" required />
         </p>
         <p>
             Käyttäjätunnus

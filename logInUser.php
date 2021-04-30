@@ -9,6 +9,8 @@
 		<meta name="description" content="" />
 		<link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="css/teHoChat.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="forms/build/css/intlTelInput.css">
+        <link rel="stylesheet" href="forms/build/css/demo.css">
 	</head>
     <body>
         <?php 
@@ -36,7 +38,7 @@
                         // var_dump($tulosOlio);
                         if(password_verify($givenPasswordAdded,$tulosOlio->userPassword)){
                             $_SESSION['sloggedIn']="yes";
-                            $_SESSION['suserName']=$tulosOlio->userName;
+                            $_SESSION['suserName']=$_POST['givenUsername'];
                             header("Location: index.php"); //Palataan pääsivulle kirjautuneena
                         }else{
                             $_SESSION['swarningInput']="Wrong password";

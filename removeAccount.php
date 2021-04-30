@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC>
+<html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>
@@ -20,40 +20,48 @@
             <div id="triangle-up"></div>
             </div>
     </div>
-    <?php
+    <?php    
         include("includes/iheader.php");
         if(isset($_SESSION['sloggedIn'])){
-
-        }else{
-            include("includes/iheader.php");              
             include("forms/fremoveAccount.php");
-            require_once("functions/functions.php");
-
             //Lomakkeen remove painettu?
             if(isset($_POST['removeUser'])){
                 unset($_SESSION['swarningInput']);  
                 try {
+                    $data['rPhone']=$_POST["givenPhoneNumber"];
+                    $data['rPassword']=$_POST["givenPassword"];
+
                     //Tiedot kannasta, hakuehto
-                    $data['number'] = $_POST['givenPhoneNumber'];
-                    $STH = $DBH->prepare("SELECT userPassword FROM TeHoChat_user WHERE userPhoneNumber = :number;");
+                    $STH = $DBH->prepare("SELECT userPassword FROM TeHoChat_user where userPhoneNumber  =  " . "'".$_POST['givenPhoneNumber']."'  AND userName =  " . "'".$_SESSION['suserName']."'");                    
                     $STH->execute($data);
                     $STH->setFetchMode(PDO::FETCH_OBJ);
                     $tulosOlio=$STH->fetch();
                     //lomakkeelle annettu salasana + suola
                     $givenPasswordAdded = $_POST['givenPassword'].$added; //$added löytyy cconfig.php
-        
+
                     //Löytyikö tunnus kannasta?   
                     if($tulosOlio!=NULL){
                         //Tunnus löytyi
                         // var_dump($tulosOlio);
-                        if(password_verify($givenPasswordAdded,$tulosOlio->userPassword)){
-                            $sql = "DELETE (*) FROM TeHoChat_user where userPhoneNumber  =  " . "'".$_POST['givenPhoneNumber']."'"  ;
-                            //header("Location: index.php"); //Palataan pääsivulle 
-                        }else{
-                            $_SESSION['swarningInput']="Wrong password";
-                        }
+                        echo("löyyi");
+
+                            if(password_verify($givenPasswordAdded,$tulosOlio->userPassword)){
+                                $sql = "DELETE FROM TeHoChat_user where userPhoneNumber  = " . "'".$_POST['givenPhoneNumber']."' and userName =  " . "'".$_SESSION['suserName']."'";
+                                //DELETE (*) FROM TeHoChat_user where userPhoneNumber = '+358449749407' and userName = 'anatolru'
+                                //$sql = "DELETE (*) FROM TeHoChat_user where userPhoneNumber  = " . "'".$_POST['givenPhoneNumber']."' and userName =  " . "'".$_SESSION['suserName']."'";
+                                $kysely=$DBH->prepare($sql);
+                                echo($sql);
+                                $kysely->execute();				
+                                $tulos=$kysely->fetch();
+                                echo("poistettu");
+                                //header("Location: index.php"); //Palataan pääsivulle 
+                            }else{
+                                $_SESSION['swarningInput']="Wrong password";
+                            }
+                        
                     }else{
-                        $_SESSION['swarningInput']="Wrong num";
+                        $_SESSION['swarningInput']="Virhellinen numero";
+                        echo("ei");
                     }
                 } catch(PDOException $e) {
                     file_put_contents('log/DBErrors.txt', 'signInUser.php: '.$e->getMessage()."\n", FILE_APPEND);
