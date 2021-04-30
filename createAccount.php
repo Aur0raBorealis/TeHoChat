@@ -87,13 +87,13 @@
                     $data['password'] = password_hash($_POST['givenPassword'].$added, PASSWORD_BCRYPT);
                     try {
                         //***Käyttäjätunnus ei saa olla käytetty aiemmin
-                        $sql = "SELECT COUNT(*) FROM TeHoChat_user where userName  =  " . "'".$_POST['givenUsername']."' OR userPhoneNumber =  " . "'".$_POST['givenPhoneNumber']."'"  ;
-                        
+                        $sql = "SELECT COUNT(*) FROM TeHoChat_user where userName  =  " . "'".$_POST['givenUsername']."' OR userPhoneNumber =  " . "'".$_POST['givenPhoneNumber']."'"  ;                       
                         $kysely=$DBH->prepare($sql);
                         $kysely->execute();				
                         $tulos=$kysely->fetch();
                         if($tulos[0] == 0){ //Puhelin ei ole käytössä
-                            $STH = $DBH->prepare("INSERT INTO TeHoChat_user (userName, userPhoneNumber, userPassword) VALUES (:name, :phoneNumber, :password);");
+                            $STH = $DBH->prepare("INSERT INTO TeHoChat_user (userName, userPhoneNumber, userPassword) VALUES (:name, :phoneNumber, :password);" .
+                            "INSERT INTO chat_users (username, current_session, online) VALUES (:name, 0, 0);");
                             $STH->execute($data);
                             header("Location: index.php"); //Palataan pääsivulle kirjautuneena
                         }else{

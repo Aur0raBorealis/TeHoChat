@@ -15,8 +15,7 @@ include('chatHeader.php');
 <?php include('container.php');?>
 <div class="container">		
 	<h1>Keskustelu</h1>		
-	<br>		
-	<?php if(isset($_SESSION['userid']) && $_SESSION['userid']) { ?> 	
+	<br>			
 		<div class="chat">	
 			<div id="frame">		
 				<div id="sidepanel">
@@ -102,11 +101,6 @@ include('chatHeader.php');
 				</div>
 			</div>
 		</div>
-	<?php } else { ?>
-		<br>
-		<br>
-		<strong><a href="login.php"><h3>Login To Access Chat System</h3></a></strong>		
-	<?php } ?>
 	<br>
 	<br>	
 </div>	

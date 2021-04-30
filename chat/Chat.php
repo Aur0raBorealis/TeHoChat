@@ -1,9 +1,9 @@
 <?php
 class Chat{
-    private $user  = 'joonakku';
-    private $password   = "vesiamme";
+    private $user  = 'anatolru';
+    private $password   = "FN2000";
 	private $host = "mysql.metropolia.fi";
-    private $database  = "joonakku";      
+    private $database  = "anatolru";      
     private $chatTable = 'chat';
 	private $chatUsersTable = 'chat_users';
 	private $chatLoginDetailsTable = 'chat_login_details';
