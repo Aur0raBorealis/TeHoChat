@@ -25,7 +25,7 @@
                 try {
                     //Tiedot kannasta, hakuehto
                     $data['name'] = $_POST['givenUsername'];
-                    $STH = $DBH->prepare("SELECT userPassword FROM TeHoChat_user WHERE userName = :name;");
+                    $STH = $DBH->prepare("SELECT userID, userPassword FROM TeHoChat_user WHERE userName = :name;");
                     $STH->execute($data);
                     $STH->setFetchMode(PDO::FETCH_OBJ);
                     $tulosOlio=$STH->fetch();
@@ -39,6 +39,7 @@
                         if(password_verify($givenPasswordAdded,$tulosOlio->userPassword)){
                             $_SESSION['sloggedIn']="yes";
                             $_SESSION['suserName']=$_POST['givenUsername'];
+                            $_SESSION['suserId']=$tulosOlio->userID;
                             header("Location: index.php"); //Palataan pääsivulle kirjautuneena
                         }else{
                             $_SESSION['swarningInput']="Wrong password";

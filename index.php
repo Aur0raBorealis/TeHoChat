@@ -38,17 +38,17 @@
 								<?php
 									echo("<p>
 											Käyttäjä: 
-										</p>" .$_SESSION['suserName']);
+										</p>" . $_SESSION['suserName']);
 								?>
 							</a>
 						</li>
 						<li>
-							<a href="userChat.php" accesskey="2" title="">
+							<a href="chat/userChat.php" accesskey="2" title="">
 								Aloita chat
 							</a>
 						</li>
 						<li>
-							<a href="#" accesskey="3" title="">
+							<a href="chart.php" accesskey="3" title="">
 								HRV
 							</a>
 						</li>
