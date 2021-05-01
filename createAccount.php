@@ -42,19 +42,19 @@
             // dropdownContainer: document.body,
             // excludeCountries: ["fi"],
             // formatOnDisplay: false,
-            //geoIpLookup: function(callback) {
-               // $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-              //      var countryCode = (resp && resp.country) ? resp.country : "fi";
-             //       callback(countryCode);
-            //    });
-            //},
+            geoIpLookup: function(callback) {
+                $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+                    var countryCode = (resp && resp.country) ? resp.country : "fi";
+                    callback(countryCode);
+                });
+            },
             //hiddenInput: "full_number",
-            //initialCountry: "fi",
-            // localizedCountries: { 'fi': 'Suomi' },
+            initialCountry: "fi",
+            localizedCountries: { 'fi': 'Suomi' },
             // nationalMode: false,
-            // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+            onlyCountries: ['fi'],
             // placeholderNumberType: "MOBILE",
-            preferredCountries: ['fi'],
+            //preferredCountries: ['fi'],
             // separateDialCode: true,
             utilsScript: "forms/build/js/utils.js",
             });
@@ -63,15 +63,18 @@
             //Lomakkeen submit painettu?
             if(isset($_POST['submitUser'])){
                 //Tarkistetaan syötteet myös palvelimella
-                //if(!preg_match('/^\+358[0-9]{9}$ || /^\358[0-9]{9}$/', $_POST['givenPhoneNumber'])){
+                if(!preg_match('/^\+358[0-9]{9}$/', $_POST['givenPhoneNumber']) && !preg_match('/^\358[0-9]{9}$/', $_POST['givenPhoneNumber']) && !preg_match('/^\04[0-9]{8}$/', $_POST['givenPhoneNumber'])){
+                    $_SESSION['swarningInput']="Laiton puh1";
 
-                //if(!preg_match('/^\+358[0-9]{9}$/', $_POST['givenPhoneNumber'])){
-                    //$_SESSION['swarningInput']="Laiton puh1";
-
-                if($_POST['givenPassword'] != $_POST['givenPasswordVerify']){
+                }else if($_POST['givenPassword'] != $_POST['givenPasswordVerify']){
                     $_SESSION['swarningInput']="Annettu ja vahvistettu salasanat eivät ole samoja";
                         
                 }else{
+                    if(preg_match('/^\358[0-9]{9}$/', $_POST['givenPhoneNumber'])){
+                        $_POST['givenPhoneNumber'] = "+".$_POST['givenPhoneNumber'];
+                    }else if(preg_match('/^\358[0-9]{9}$/', $_POST['givenPhoneNumber'])){
+                        $_POST['givenPhoneNumber'] = "+".$_POST['givenPhoneNumber'];
+                    }
                     unset($_SESSION['swarningInput']);
                     //1. Tiedot sessioon
                     $_SESSION['suserName']=$_POST['givenUsername'];

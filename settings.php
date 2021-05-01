@@ -38,28 +38,13 @@
 								<?php
 									echo("<p>
 											Käyttäjä: 
-										</p>" . $_SESSION['suserName']);
+										</p>" .$_SESSION['suserName']);
 								?>
 							</a>
 						</li>
 						<li>
-							<a href="chat/userChat.php" accesskey="2" title="">
-								Aloita chat
-							</a>
-						</li>
-						<li>
-							<a href="chart.php" accesskey="3" title="">
-								HRV
-							</a>
-						</li>
-						<li>
-							<a href="settings.php">
-								Asetukset
-							</a>
-						</li>
-						<li>
-							<a href="logOutUser.php"> 
-								Kirjaudu ulos        
+							<a href="removeAccount.php">
+								Poista tilin
 							</a>
 						</li>
 						<?php
@@ -67,7 +52,7 @@
 						?>
 						<li>		
 							<a href="createAccount.php">
-        						Luo uusi käyttäjä
+        						Luo uuden käyttäjän
     						</a> 
 						</li>
 						<li>

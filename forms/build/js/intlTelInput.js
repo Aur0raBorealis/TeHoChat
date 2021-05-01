@@ -927,10 +927,6 @@
                     // update the selected country's title attribute
                     var title = countryCode ? "".concat(this.selectedCountryData.name, ": +").concat(this.selectedCountryData.dialCode) : "Unknown";
                     this.selectedFlag.setAttribute("title", title);
-
-                    var titlec=title.split(":");
-                    document.getElementById('phone').value=title[1];
-
                     if (this.options.separateDialCode) {
                         var dialCode = this.selectedCountryData.dialCode ? "+".concat(this.selectedCountryData.dialCode) : "";
                         this.selectedDialCode.innerHTML = dialCode;
