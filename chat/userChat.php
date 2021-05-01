@@ -23,9 +23,10 @@ include('chatHeader.php');
 					<?php
 					include ('Chat.php');
 					$chat = new Chat();
-					$_SESSION['username'] = $_SESSION['suserName'];	
-					$_SESSION['userid'] = $_SESSION['suserId'];			
-					$loggedUser = $chat->getUserDetails($_SESSION['userid']);
+					$user['username'] = $_SESSION['suserName'];	
+					$user['userid'] = $_SESSION['suserId'];	
+					$_SESSION['userid'] = $user['userid'];	
+					$loggedUser = $chat->getUserDetails($user['userid']);
 					echo '<div class="wrap">';
 					$currentSession = '';
 					foreach ($loggedUser as $user) {
@@ -54,7 +55,7 @@ include('chatHeader.php');
 					<div id="contacts">	
 					<?php
 					echo '<ul>';
-					$chatUsers = $chat->chatUsers($_SESSION['userid']);
+					$chatUsers = $chat->chatUsers($user['userid']);
 					foreach ($chatUsers as $user) {
 						$status = 'offline';						
 						if($user['online']) {
@@ -68,7 +69,7 @@ include('chatHeader.php');
 						echo '<div class="wrap">';
 						echo '<span id="status_'.$user['userid'].'" class="contact-status '.$status.'"></span>';						
 						echo '<div class="meta">';
-						echo '<p class="name">'.$user['username'].'<span id="unread_'.$user['userid'].'" class="unread">'.$chat->getUnreadMessageCount($user['userid'], $_SESSION['userid']).'</span></p>';
+						echo '<p class="name">'.$user['username'].'<span id="unread_'.$user['userid'].'" class="unread">'.$chat->getUnreadMessageCount($user['userid'], $user['userid']).'</span></p>';
 						echo '<p class="preview"><span id="isTyping_'.$user['userid'].'" class="isTyping"></span></p>';
 						echo '</div>';
 						echo '</div>';
@@ -89,7 +90,7 @@ include('chatHeader.php');
 					</div>
 					<div class="messages" id="conversation">		
 					<?php
-						echo $chat->getUserChat($_SESSION['userid'], $currentSession);						
+						echo $chat->getUserChat($user['userid'], $currentSession);						
 					?>
 					</div>
 					<div class="message-input" id="replySection">				
