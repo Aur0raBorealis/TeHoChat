@@ -49,7 +49,9 @@
                     
                     <br>
                     <div class="asetukset-teksti">
-                        <p> POISTA KÄYTTTÄJÄ </P>
+						<a href="removeAccount.php">
+							<p>Poista tili</p>
+						</a>
 
                         <p> POISTA SYKEVÄLIDATA </p>
                     </div>

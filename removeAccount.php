@@ -43,7 +43,7 @@
                     if($tulosOlio!=NULL){
                         //Tunnus löytyi
                         // var_dump($tulosOlio);
-                        echo("löyyi");
+                        echo("löytyi");
 
                             if(password_verify($givenPasswordAdded,$tulosOlio->userPassword)){
                                 $sql = "DELETE FROM TeHoChat_user where userPhoneNumber  = " . "'".$_POST['givenPhoneNumber']."' and userName =  " . "'".$_SESSION['suserName']."'";
