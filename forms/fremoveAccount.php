@@ -11,7 +11,7 @@
 </p>
 <p>
     <br/>  
-    <input type="submit" name="removeUser" value="Submit"/>
-    <input type="reset"  value="Reset"/>
+    <input type="submit" name="removeUser" value="Hyväksyä"/>
+    <input type="reset"  value="Peruta"/>
 </p>
 </form>

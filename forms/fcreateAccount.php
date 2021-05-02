@@ -27,9 +27,9 @@
         </p>
         <p>
             <br/>  
-            <input type="submit" name="submitUser" value="Submit"/>
-            <input type="reset"  value="Reset"/>
-            <input type="submit" name="submitBack" value="Pääsivulle"/>
+            <input type="submit" name="submitUser" value="Hyväksyä"/>
+            <input type="reset"  value="Tyhjennä"/>
+            <input type="submit" name="submitBack" value="Peruta"/>
         </p>
     </form>
 </fieldset>

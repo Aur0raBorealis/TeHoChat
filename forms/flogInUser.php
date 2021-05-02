@@ -16,7 +16,7 @@
             </p>
             <p>
                 <br/>
-                <input type="submit" name="submitUser" value="Submit"/>
+                <input type="submit" name="submitUser" value="Hyväksyä"/>
                 <input type="reset"  value="Tyhjennä"/>
                 <input type="submit" name="submitBack" value="Peruta"/>
             </p>
