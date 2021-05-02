@@ -1,3 +1,4 @@
+//Koodi jota käytetty sivustolla: http://www.phpzag.com/build-live-chat-system-with-ajax-php-mysql/ 
 $(document).ready(function(){
 	setInterval(function(){
 		updateUserList();	

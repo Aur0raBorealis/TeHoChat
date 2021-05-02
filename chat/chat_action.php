@@ -1,3 +1,4 @@
+<!--Koodi jota käytetty sivustolla: http://www.phpzag.com/build-live-chat-system-with-ajax-php-mysql/ -->
 <?php
 session_start();
 include ('Chat.php');
