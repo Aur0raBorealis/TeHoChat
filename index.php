@@ -33,6 +33,7 @@
 				<ul>
 					<?php
 						//Käyttäjän tila
+						//Jos kirjautunut
 						if($_SESSION['sloggedIn']=="yes"){
 					?>
 					<li>
@@ -45,7 +46,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="chat/userChat.php" accesskey="2" title="">
+						<a href="chat/userChat.php">
 							Aloita chat
 						</a>
 					</li>
@@ -65,6 +66,7 @@
 						</a>
 					</li>
 					<?php
+						//Jos ei kirjautunut
 						}else{
 					?>
 					<li>		

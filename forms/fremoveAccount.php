@@ -2,16 +2,16 @@
 <p>
     Puhelinnumero
     <br/> 
-    <input type="text" name="givenPhoneNumber" placeholder="" maxlength="40" required/>
+    <input class="inpt" type="text" name="givenPhoneNumber" maxlength="40" required/>
 </p>
 <p>
     Salasana
     <br/>  
-    <input type="password" name="givenPassword" placeholder="Vähintään 8 merkkiä" maxlength="40" required/>
+    <input class="inpt" type="password" name="givenPassword" maxlength="40" required/>
 </p>
 <p>
     <br/>  
-    <input type="submit" name="removeUser" value="Hyväksyä"/>
-    <input type="reset"  value="Peruta"/>
+    <input class="btn" type="submit" name="removeUser" value="Hyväksyä"/>
+    <input class="btn" type="reset"  value="Peruta"/>
 </p>
 </form>

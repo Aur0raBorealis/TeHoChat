@@ -24,7 +24,6 @@
         //Käyttäjän tila
         if($_SESSION['sloggedIn']=="yes"){
             if (!isset($_COOKIE['admin'])) {
-                echo("lol2");
                 header("Location: logOutUser.php");
             }else{
                 setcookie('admin', 'abc', time()+300);
